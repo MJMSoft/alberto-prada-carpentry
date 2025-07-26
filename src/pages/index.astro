@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Services from '../components/Services.astro';
+import Stats from '../components/Stats.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { siteConfig } from '../config/site.config';
+
+const navLinks = [
+  { href: '#services', label: 'Servicios' },
+  { href: '#portfolio', label: 'Portafolio' },
+  { href: '#process', label: 'Proceso' },
+  { href: '#contact', label: 'Contacto' }
+];
+
+const services = [
+  {
+    icon: '🏠',
+    title: 'Muebles de Cocina',
+    description: 'Gabinetes y alacenas personalizadas con maderas finas colombianas, diseñadas para aprovechar cada espacio de su hogar caleño.'
+  },
+  {
+    icon: '🪑',
+    title: 'Muebles a la Medida',
+    description: 'Comedores, salas, alcobas y escritorios diseñados con el estilo tradicional colombiano que caracteriza nuestro trabajo artesanal.'
+  },
+  {
+    icon: '🚪',
+    title: 'Puertas y Ventanas',
+    description: 'Fabricación e instalación de puertas en madera maciza, ventanas y marcos con acabados de primera calidad.'
+  },
+  {
+    icon: '🏗️',
+    title: 'Closets y Vestidores',
+    description: 'Diseño de espacios de almacenamiento inteligentes, closets walk-in y organizadores que maximizan su comodidad.'
+  },
+  {
+    icon: '🛠️',
+    title: 'Restauración de Muebles',
+    description: 'Recuperamos y restauramos sus muebles antiguos conservando su valor sentimental con técnicas tradicionales.'
+  },
+  {
+    icon: '📐',
+    title: 'Trabajos Arquitectónicos',
+    description: 'Pasamanos, escaleras, pérgolas, techos decorativos y elementos arquitectónicos que realzan su hogar.'
+  }
+];
+
+const stats = [
+  { number: '25', suffix: '+', label: 'Años de Experiencia' },
+  { number: '800', suffix: '+', label: 'Familias Satisfechas' },
+  { number: '100', suffix: '%', label: 'Trabajo Artesanal' },
+  { number: '5', suffix: ' años', label: 'de Garantía' }
+];
+
+const socialLinks = [
+  { platform: 'Instagram', url: '#', icon: '📷' },
+  { platform: 'Pinterest', url: '#', icon: '📌' },
+  { platform: 'Facebook', url: '#', icon: '📘' }
+];
+---
+
+<BaseLayout>
+  <Navigation 
+    links={navLinks}
+    bgColor="bg-white"
+    textColor="text-gray-900"
+  />
+  
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=2000" 
+        alt="Taller de carpintería Alberto Prada"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40"></div>
+    </div>
+    
+    <div class="relative z-10 container mx-auto px-4 lg:px-8 text-center text-white">
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in" style="font-family: 'Georgia', serif;">
+        {siteConfig.company.name}
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.2s;">
+        {siteConfig.company.slogan}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style="animation-delay: 0.4s;">
+        <a href="#contact" class="bg-carpentry-accent hover:bg-carpentry-primary text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+          Solicitar Cotización
+        </a>
+        <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-carpentry-primary px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+          Ver Servicios
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="animate-on-scroll">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Georgia', serif;">
+            Artesanía que Perdura
+          </h2>
+          <p class="text-lg text-gray-600 mb-6">
+            En Carpintería Alberto Prada, cada pieza de madera cuenta una historia. Desde 1998, hemos transformado hogares caleños con muebles que combinan la tradición artesanal con diseños que se adaptan a su estilo de vida.
+          </p>
+          <p class="text-lg text-gray-600 mb-8">
+            Nuestro taller en el corazón de Cali es más que un espacio de trabajo: es donde la madera cobra vida bajo las manos expertas de nuestros artesanos.
+          </p>
+          <div class="flex items-center space-x-6">
+            <div class="text-center">
+              <p class="text-4xl font-bold text-carpentry-primary">25+</p>
+              <p class="text-sm text-gray-600">Años de Experiencia</p>
+            </div>
+            <div class="text-center">
+              <p class="text-4xl font-bold text-carpentry-primary">800+</p>
+              <p class="text-sm text-gray-600">Proyectos Realizados</p>
+            </div>
+            <div class="text-center">
+              <p class="text-4xl font-bold text-carpentry-primary">100%</p>
+              <p class="text-sm text-gray-600">Satisfacción</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative animate-on-scroll" style="animation-delay: 0.2s;">
+          <img 
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000" 
+            alt="Alberto Prada en su taller"
+            class="rounded-2xl shadow-2xl"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Services 
+    title="Servicios Especializados"
+    subtitle="Cada proyecto es único, cada detalle importa"
+    services={services}
+    bgColor="bg-gradient-to-b from-amber-50 to-white"
+    cardStyle="bordered"
+    accentColor="from-carpentry-primary to-carpentry-accent"
+  />
+  
+  <section class="py-20 bg-carpentry-primary text-white" id="portfolio">
+    <div class="container mx-auto px-4 lg:px-8">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16 animate-on-scroll" style="font-family: 'Georgia', serif;">
+        Proyectos Destacados
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center animate-on-scroll">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300">
+            <img 
+              src="https://images.unsplash.com/photo-1565791380713-1756b9a05343?q=80&w=400" 
+              alt="Cocina en madera"
+              class="w-full h-48 object-cover rounded-xl mb-4"
+            />
+            <h3 class="text-2xl font-bold mb-2">Cocinas Integrales</h3>
+            <p class="text-white/90">Diseños funcionales que optimizan cada espacio</p>
+          </div>
+        </div>
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.1s;">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300">
+            <img 
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=400" 
+              alt="Muebles de sala"
+              class="w-full h-48 object-cover rounded-xl mb-4"
+            />
+            <h3 class="text-2xl font-bold mb-2">Muebles de Hogar</h3>
+            <p class="text-white/90">Piezas únicas que reflejan su personalidad</p>
+          </div>
+        </div>
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300">
+            <img 
+              src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=400" 
+              alt="Closets modernos"
+              class="w-full h-48 object-cover rounded-xl mb-4"
+            />
+            <h3 class="text-2xl font-bold mb-2">Closets y Vestidores</h3>
+            <p class="text-white/90">Organización inteligente para su comodidad</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-20 bg-gradient-to-br from-carpentry-primary to-carpentry-secondary text-white" id="process">
+    <div class="container mx-auto px-4 lg:px-8">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16 animate-on-scroll">
+        Nuestro Proceso de Trabajo
+      </h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center animate-on-scroll">
+          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+            <span class="text-3xl">📐</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Visita y Diseño</h3>
+          <p class="text-white/90">Visitamos su hogar, escuchamos sus ideas y tomamos medidas precisas</p>
+        </div>
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.1s;">
+          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+            <span class="text-3xl">🪵</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Elección de Maderas</h3>
+          <p class="text-white/90">Le asesoramos en la selección de las mejores maderas colombianas</p>
+        </div>
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+            <span class="text-3xl">🔨</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Fabricación Artesanal</h3>
+          <p class="text-white/90">Con técnicas tradicionales creamos cada pieza con amor y dedicación</p>
+        </div>
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.3s;">
+          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+            <span class="text-3xl">✨</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Instalación y Acabados</h3>
+          <p class="text-white/90">Instalamos en su hogar y aplicamos los acabados finales perfectos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Stats 
+    title="Nuestra Experiencia Habla por Sí Misma"
+    stats={stats}
+    bgColor="bg-amber-50"
+    accentColor="from-carpentry-primary to-carpentry-accent"
+  />
+  
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="animate-on-scroll">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            ¿Por Qué Elegirnos?
+          </h2>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+              <div class="w-6 h-6 rounded-full bg-carpentry-primary flex-shrink-0 mt-1"></div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">Maderas de Primera Calidad</h3>
+                <p class="text-gray-600">Trabajamos con las mejores maderas del Valle del Cauca, garantizando durabilidad.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-6 h-6 rounded-full bg-carpentry-primary flex-shrink-0 mt-1"></div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">Artesanía Tradicional</h3>
+                <p class="text-gray-600">Técnicas heredadas de generación en generación que garantizan calidad superior.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-6 h-6 rounded-full bg-carpentry-primary flex-shrink-0 mt-1"></div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">Diseños Personalizados</h3>
+                <p class="text-gray-600">Creamos muebles únicos adaptados a sus espacios y necesidades específicas.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-6 h-6 rounded-full bg-carpentry-primary flex-shrink-0 mt-1"></div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">Garantía de 5 Años</h3>
+                <p class="text-gray-600">Respaldamos cada trabajo con nuestra garantía de calidad y servicio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative animate-on-scroll" style="animation-delay: 0.2s;">
+          <img 
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000" 
+            alt="Carpintero trabajando"
+            class="rounded-2xl shadow-2xl"
+          />
+          <div class="absolute -bottom-6 -right-6 bg-carpentry-secondary text-white p-6 rounded-2xl shadow-xl">
+            <p class="text-3xl font-bold">25+</p>
+            <p class="text-sm">Años en Cali</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Contact 
+    title="Solicite su Cotización"
+    subtitle="Visítenos en nuestro taller o contáctenos para una consulta gratuita"
+    phone="315 4366937"
+    email="info@carpinteriaprada.com.co"
+    address="Cl. 32b #16-41, Comuna 8, segundo piso, Cali, Valle del Cauca"
+    bgColor="bg-amber-50"
+    accentColor="from-carpentry-primary to-carpentry-secondary"
+  />
+  
+  <Footer 
+    companyName="Carpintería Alberto Prada"
+    links={navLinks}
+    socials={socialLinks}
+    bgColor="bg-gray-900"
+  />
+  
+  <WhatsAppButton />
+</BaseLayout>
